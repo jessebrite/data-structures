@@ -1,40 +1,61 @@
+import java.util.Arrays;
+
 public class StackArray<T> implements Stack<T> {
 	private int count;
 	private T[] data;
 
-	private StackArray() {
-		data = (T[]) new Object[10];
+	StackArray() {
+		data = (T[]) new Object[1];
 	}
+
 	@Override
 	public T pop() {
 		if (isEmpty()) {
 			throw new java.util.NoSuchElementException();
-			T temp = data[--count];
-			data[count] = null;
-			if (count <= data.length/2) {
-				resize(data.length/2);
-			}
 		}
+		T temp = data[--count];
+		data[count] = null;
+		if (count <= data.length / 2) {
+			resize(data.length / 2);
+		}
+		return temp;
 	}
 
 	@Override
 	public void push(T element) {
+		if (count == data.length) {
+			resize(data.length * 2);
+		}
 
+		data[count++] = element;
 	}
 
 	@Override
 	public T peek() {
-		return null;
+		if (isEmpty()) {
+			throw new java.util.NoSuchElementException();
+		}
+		return data[count -1];
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return false;
+		return count == 0;
 	}
 
 	@Override
 	public int size() {
-		return 0;
+		return data.length;
 	}
 
+	public void  resize(int capacity) {
+		T[] temp = (T[]) new Object[capacity];
+		System.arraycopy(data, 0, temp, 0, count);
+		data = temp;
+	}
+
+	@Override
+	public String toString() {
+		return Arrays.toString(data);
+	}
 }
