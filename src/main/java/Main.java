@@ -1,14 +1,14 @@
 public class Main {
 	public static void main(String[] args) {
-		Stack<Integer> stack = new StackArray<>();
+		Stack<String> stack = new StackLinkedList<>();
 
-		System.out.println(stack);
+//		System.out.println(stack);
 
-		stack.push(10);
-		stack.push(30);
-		stack.push(50);
-		stack.push(40);
-		stack.push(20);
+		stack.push("Togo");
+		stack.push("Cameroon");
+		stack.push("Pakistan");
+		stack.push("Iran");
+		stack.push("Ethiopia");
 		System.out.println(stack);
 
 		System.out.println(stack.peek());
@@ -17,5 +17,4 @@ public class Main {
 		System.out.println(stack);
 		stack.peek();
 	}
-
 }

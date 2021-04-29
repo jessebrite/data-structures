@@ -15,7 +15,7 @@ public class StackArray<T> implements Stack<T> {
 		}
 		T temp = data[--count];
 		data[count] = null;
-		if (count <= data.length / 2) {
+		if (count <= size() / 2) {
 			resize(data.length / 2);
 		}
 		return temp;
@@ -43,7 +43,6 @@ public class StackArray<T> implements Stack<T> {
 		return count == 0;
 	}
 
-	@Override
 	public int size() {
 		return data.length;
 	}
