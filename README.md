@@ -10,19 +10,22 @@ the inner workings of them and their underlying architecture.
 
 ## Table of Contents
 
-1. [Data Structures](#ds)
-   1. [Arrays](#arrays)
-   1. [LinkedList](#linkedList)
-   1. [Stack](#stack)
-   1. [Queue](#queue)
-   1. [Heap](#arrays)
-1. [Algorithms](#algorithms)
+- [Data Structures](#data-structures)
+   - [Arrays](#arrays)
+   -  [LinkedList](#linkedList)
+   - [Stack](#stack)
+   - [Queue](#queue)
+   - [Heap](#arrays)
+- [Algorithms](#algorithms)
 
 ## Data Structures 
 I'm going to implement the following tasks and check them as I complete.
-1.[ ] Arrays <a href="arrays"></a>
-2.[x] LinkedList
-3.[x] Stack using `Dynamic Arrays` 
-4.[x] Stack using `LinkedList`
-1.[ ] Queues
-1.[ ] Heaps
+- [ ] Arrays
+- [x] LinkedList
+- [x] Stack using `Dynamic Arrays` 
+- [x] Stack using `LinkedList`
+- [ ] Queues
+- [ ] Heaps
+
+### Arrays
+Yet to implement it
