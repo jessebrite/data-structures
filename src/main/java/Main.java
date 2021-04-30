@@ -6,6 +6,6 @@ public class Main {
 		list.addLast("blue");
 		list.addFirst("Beans");
 		list.removeLast();
-		System.out.println(list.contains("green"));
+		System.out.println(list.size());
 	}
 }

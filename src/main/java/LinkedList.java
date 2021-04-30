@@ -1,43 +1,50 @@
 import java.util.NoSuchElementException;
 
-public class LinkedList<T> {
+public class LinkedList<E> {
 
-	private static class Node<T> {
-		private Node<T> next;
-		private final T value;
+	private static class Node<E> {
+		private Node<E> next;
+		private final E value;
 
-		public Node(T value) {
+		public Node(E value) {
 			this.value = value;
 		}
 	}
 
-	private Node<T> first;
-	private Node<T> last;
+	private Node<E> head = null;
+	private Node<E> tail = null;
+	private static int size = 0;
+
+	public int size() {
+		return size;
+	}
 
 	// add node at the beginning
-	public void addFirst(T item) {
-		Node<T> node = new Node<>(item);
+	public void addFirst(E item) {
+		Node<E> node = new Node<>(item);
 		if (isEmpty()) {
-			first = last = node;
+			head = tail = node;
 		} else {
-			node.next = first;
-			first = node;
+			node.next = head;
+			head = node;
 		}
+		size++;
 	}
 
-	public void addLast(T item) {
-		Node<T> node = new Node<>(item);
+	public void addLast(E item) {
+		Node<E> node = new Node<>(item);
 		if (isEmpty()) {
-			first = last = node;
+			head = tail = node;
 		} else {
-			last.next = node;
-			last = node;
+			tail.next = node;
+			tail = node;
 		}
+		size++;
 	}
 
-	public int indexOf(T item) {
+	public int indexOf(E item) {
 		int index = 0;
-		var current = first;
+		var current = head;
 		while (current != null) {
 			if (current.value == item) {
 				return index;
@@ -53,12 +60,13 @@ public class LinkedList<T> {
 			throw new NoSuchElementException();
 		}
 		if (isSingleNode()) {
-			first = last = null;
+			head = tail = null;
 			return;
 		}
-		var temp = first.next;
-		first.next = null;
-		first = temp;
+		var temp = head.next;
+		head.next = null;
+		head = temp;
+		size--;
 	}
 
 	public void removeLast() {
@@ -66,19 +74,20 @@ public class LinkedList<T> {
 			throw new NoSuchElementException();
 		}
 		if (isSingleNode()) {
-			first = last = null;
+			head = tail = null;
 			return;
 		}
-		last = getPrevious(last);
-		last.next = null;
+		tail = getPrevious(tail);
+		tail.next = null;
+		size--;
 	}
 
-	public boolean contains(T item) {
+	public boolean contains(E item) {
 		return indexOf(item) != -1;
 	}
 
-	private Node<T> getPrevious(Node<T> node) {
-		var current = first;
+	private Node<E> getPrevious(Node<E> node) {
+		var current = head;
 		while (current != null) {
 //			if current node == given node, return current node;
 			if (current.next == node) {
@@ -92,10 +101,10 @@ public class LinkedList<T> {
 
 	// contains ony one node
 	private boolean isSingleNode() {
-		return first == last;
+		return head == tail;
 	}
 
 	private boolean isEmpty() {
-		return first == null;
+		return head == null;
 	}
 }
