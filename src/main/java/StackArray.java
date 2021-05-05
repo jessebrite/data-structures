@@ -35,7 +35,7 @@ public class StackArray<T> implements Stack<T> {
 		if (isEmpty()) {
 			throw new java.util.NoSuchElementException();
 		}
-		return data[count--];
+		return data[count - 1];
 	}
 
 	@Override
