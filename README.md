@@ -12,10 +12,13 @@ the inner workings of them and their underlying architecture.
 
 - [Data Structures](#data-structures)
    - [Arrays](#arrays)
-   -  [LinkedList](#linkedList)
+   - [LinkedList](#linkedList)
    - [Stack](#stack)
+     - Using Dynamic Arrays
+     - Using LinkedList
    - [Queue](#queue)
    - [Heap](#arrays)
+   - [Recursion](#recursion)
 - [Algorithms](#algorithms)
 
 ## Data Structures 
@@ -26,6 +29,13 @@ I'm going to implement the following tasks and check them as I complete.
 - [x] Stack using `LinkedList`
 - [ ] Queues
 - [ ] Heaps
+- [ ] Recursion
 
 ### Arrays
 Yet to implement it
+
+### LinkedList
+### Stack
+- #### using Dynamic Arrays
+- #### using LinkedList
+### Recursion

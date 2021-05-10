@@ -1,3 +1,5 @@
+package stack;
+
 public interface Stack<T> {
 	// remove element from stack
 	T pop();

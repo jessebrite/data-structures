@@ -1,3 +1,7 @@
+package stack;
+
+import stack.Stack;
+
 import java.util.NoSuchElementException;
 
 public class StackLinkedList<T> implements Stack<T> {
